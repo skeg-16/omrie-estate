@@ -1,7 +1,4 @@
-import { inject } from '@vercel/analytics';
 
-// Initialize the analytics
-inject();
 
 document.addEventListener('DOMContentLoaded', () => {
 
