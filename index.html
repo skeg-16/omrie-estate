@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Omrie Estate</title>
+    <link rel='stylesheet' href='styles.css'>
+    <link href='https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700&display=swap' rel='stylesheet'>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel='icon' type='image/jpeg' href='logo.png'>
+    <link rel='stylesheet' href='https://unpkg.com/leaflet@1.9.4/dist/leaflet.css'>
+</head>
+<body class='theme-dawn'>
+
+    <div class='scroll-progress' id='scroll-progress'></div>
+    <div class='custom-cursor' id='cursor'></div>
+
+    <div class='layout-wrapper'>
+        <aside class='sidebar'>
+            <div class='brand'>
+                <img src='logo.png' class='brand-logo' alt='Omrie Estate Logo' onerror='this.style.display="none"'>
+                <h1 class='brand-name'>Omrie Estate</h1>
+                <span class='est'>Est. 2026</span>
+            </div>
+            
+            <nav class='side-nav'>
+                <a href='#hero' class='nav-link active'>Prologue</a>
+                <a href='#manifesto' class='nav-link'>Manifesto</a>
+                <a href='#market' class='nav-link'>Intelligence</a>
+                <a href='#map-section' class='nav-link'>Global Map</a>
+                <a href='#collection' class='nav-link'>The Collection</a>
+                <a href='#concierge' class='nav-link'>Concierge</a>
+                <a href='#visionary' class='nav-link'>The Visionary</a>
+            </nav>
+
+            <div class='sidebar-footer'>
+                <div class='currency-switch magnetic'>
+                    <i class='bx bx-money'></i>
+                    <select id='currency-select'>
+                        <option value='USD'>USD ($)</option>
+                        <option value='EUR'>EUR (€)</option>
+                        <option value='GBP'>GBP (£)</option>
+                        <option value='PHP'>PHP (₱)</option>
+                    </select>
+                </div>
+                <button class='btn-editorial trigger-inquiry magnetic' id='inquire-btn'>Private Inquiry</button>
+                <div class='theme-switcher magnetic' id='theme-btn'>
+                    <i class='bx bx-moon'></i> <span id='theme-text'>Dusk Mode</span>
+                </div>
+                <div class='social-links'>
+                    <i class='bx bxl-instagram-alt magnetic'></i>
+                    <i class='bx bxl-pinterest magnetic'></i>
+                    <i class='bx bxl-linkedin magnetic'></i>
+                </div>
+            </div>
+        </aside>
+
+        <main class='main-content'>
+            <section id='hero' class='split-hero'>
+                <div class='hero-typography fade-in-up'>
+                    <h2 class='super-title'>Curated.<br>Refined.<br>Yours.</h2>
+                    <p class='hero-sub'>Step into a world where luxury meets absolute exclusivity. We curate spaces that echo your highest aesthetic standards and elevate the art of daily living.</p>
+                    <div class='hero-buttons'>
+                        <button class='btn-pill btn-pink magnetic' id='btn-to-collection'>View Collection</button>
+                        <button class='btn-pill btn-outline magnetic' id='btn-to-manifesto'>Our Philosophy</button>
+                    </div>
+                </div>
+                <div class='hero-visuals'>
+                  <div class='editorial-img-1' style='background-image: url(&apos;https://images.pexels.com/photos/1029599/pexels-photo-1029599.jpeg?auto=compress&cs=tinysrgb&w=800&apos;);'></div>
+<div class='editorial-img-2 fade-in-delayed' style='background-image: url(&apos;https://images.pexels.com/photos/208736/pexels-photo-208736.jpeg?auto=compress&cs=tinysrgb&w=1200&apos;);'></div>
+                </div>
+            </section>
+
+            <section id='press' class='press-section'>
+                <p class='press-title'>Recognized by global standards of luxury</p>
+                <div class='press-logos'>
+                    <span>VOGUE LIVING</span>
+                    <span>ARCHITECTURAL DIGEST</span>
+                    <span>FORBES GLOBAL</span>
+                    <span>ELLE DECOR</span>
+                </div>
+            </section>
+
+            <section id='manifesto' class='section-padding split-section bg-soft'>
+                <div class='split-left fade-in-up'>
+                    <h3 class='section-title'>The Manifesto</h3>
+                    <p class='editorial-text drop-cap'>We believe a home is the ultimate canvas for your life. At Omrie Estate, we reject the cold, transactional nature of traditional real estate. Instead, we operate as matchmakers for the soul and the structure.</p>
+                    <p class='editorial-text'>Our portfolio is not defined by volume, but by strict aesthetic alignment. We seek out properties characterized by natural light, architectural integrity, and an inherent sense of calm.</p>
+                </div>
+                <div class='split-right fade-in-up'>
+                    <div class='lifestyle-img' style='background-image: url(&apos;https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80&apos;);'></div>
+                </div>
+            </section>
+
+            <section id='market' class='section-padding'>
+                <div class='market-wrapper fade-in-up'>
+                    <div class='market-header'>
+                        <span class='overline'>Market Intelligence</span>
+                        <h3 class='section-title'>Investment by Design</h3>
+                        <p class='editorial-text'>We do not just curate for beauty; we curate for value. Our proprietary analytics ensure that every property in our portfolio represents a sound financial acquisition.</p>
+                    </div>
+                    <div class='intelligence-grid fade-in-up'>
+                        <div class='intel-card'>
+                            <div class='intel-value'>12.4%</div>
+                            <div class='intel-label'>Annual Appreciation</div>
+                            <p>Properties within our curated zones consistently outperform regional market averages.</p>
+                        </div>
+                        <div class='intel-card'>
+                            <div class='intel-value'>45 <span style='font-size:1.5rem;'>Days</span></div>
+                            <div class='intel-label'>Market Velocity</div>
+                            <p>Our listings secure targeted buyers significantly faster through our private networks.</p>
+                        </div>
+                        <div class='intel-card'>
+                            <div class='intel-value'>$1.2B</div>
+                            <div class='intel-label'>Portfolio Value</div>
+                            <p>Trust built over years of handling high-stakes, discreet real estate transactions.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id='map-section' class='section-padding bg-soft'>
+                <div class='section-intro fade-in-up'>
+                    <span class='overline'>Geographic Curation</span>
+                    <h3 class='section-title'>Global Portfolio Map</h3>
+                    <p>Explore our exclusive listings geographically. Interact with the pins to view properties.</p>
+                </div>
+                <div class='global-map-wrapper fade-in-up'>
+                    <div id='global-map'></div>
+                </div>
+            </section>
+
+            <section id='collection' class='section-padding'>
+                <div class='section-intro fade-in-up' style='width: 100%; display: flex; flex-direction: column; align-items: center; text-align: center;'>
+                    <span class='overline'>The Core Selection</span>
+                    <h3 class='section-title'>The Lookbook</h3>
+                    <p style='max-width: 600px; margin-bottom: 30px;'>Discover our exclusive aesthetic spaces. Click on any property card to view deep architectural details, investment calculators, and virtual tours.</p>
+                    
+                    <div class='lookbook-controls' style='display: flex; gap: 20px; flex-wrap: wrap; justify-content: center; align-items: center; width: 100%;'>
+                        <div class='lookbook-filters'>
+                            <button class='filter-btn active' data-type='all'>All Spaces</button>
+                            <button class='filter-btn' data-type='villa'>Villas</button>
+                            <button class='filter-btn' data-type='penthouse'>Penthouses</button>
+                            <button class='filter-btn' data-type='estate'>Estates</button>
+                        </div>
+                        <div class='sort-control'>
+                            <i class='bx bx-sort-alt-2'></i>
+                            <select id='sort-select'>
+                                <option value='default'>Sort By: Featured</option>
+                                <option value='price-low'>Price: Low to High</option>
+                                <option value='price-high'>Price: High to Low</option>
+                                <option value='size'>Size: Largest First</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class='collection-grid fade-in-up' id='lookbook-container'></div>
+                
+                <div class='load-more-container fade-in-up' id='load-more-container'>
+                    <button class='btn-pill btn-gold magnetic' id='load-more-btn'>Explore More</button>
+                </div>
+            </section>
+
+            <section id='concierge' class='section-padding bg-soft'>
+                <div class='section-intro text-center mx-auto fade-in-up'>
+                    <span class='overline'>Beyond Real Estate</span>
+                    <h3 class='section-title'>The Omrie Concierge</h3>
+                    <p>Acquiring the property is only the beginning. We provide bespoke lifestyle services to ensure your transition and daily life are utterly seamless.</p>
+                </div>
+                
+                <div class='services-grid fade-in-up'>
+                    <div class='service-card'>
+                        <div class='s-icon'><i class='bx bx-palette'></i></div>
+                        <div class='s-content'>
+                            <h4>Art & Interiors</h4>
+                            <p>Partnerships with elite interior architects to curate your space.</p>
+                            <button class='btn-text trigger-inquiry magnetic'>Consult Now</button>
+                        </div>
+                    </div>
+                    <div class='service-card'>
+                        <div class='s-icon'><i class='bx bx-shield-quarter'></i></div>
+                        <div class='s-content'>
+                            <h4>Private Security</h4>
+                            <p>Discreet, top-tier security assessments and personnel sourcing.</p>
+                            <button class='btn-text trigger-inquiry magnetic'>Consult Now</button>
+                        </div>
+                    </div>
+                    <div class='service-card'>
+                        <div class='s-icon'><i class='bx bx-globe'></i></div>
+                        <div class='s-content'>
+                            <h4>Global Relocation</h4>
+                            <p>Comprehensive logistical support for international clients.</p>
+                            <button class='btn-text trigger-inquiry magnetic'>Consult Now</button>
+                        </div>
+                    </div>
+                    <div class='service-card'>
+                        <div class='s-icon'><i class='bx bx-wine'></i></div>
+                        <div class='s-content'>
+                            <h4>Estate Management</h4>
+                            <p>From private chefs to landscape artisans, we staff your home.</p>
+                            <button class='btn-text trigger-inquiry magnetic'>Consult Now</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id='visionary' class='section-padding'>
+                <div class='magazine-layout fade-in-up'>
+                    <div class='mag-img' style='background-image: url(&apos;ceo.jpeg&apos;); background-position: top center;'></div>
+                    <div class='mag-content'>
+                        <span class='overline'>The Visionary</span>
+                        <h3 class='section-title'>Rolanda S. Dulay</h3>
+                        <p class='editorial-text'>The essence of a home is found in its details. I founded Omrie Estate to curate spaces that breathe. We deal in warmth, elegance, and environments that inspire.</p>
+                        <p class='editorial-text'>As CEO, my promise is personal: Every listing under our banner has been vetted by me to ensure it meets our strict standards of aesthetic luxury and emotional resonance.</p>
+                        <div class='signature'>R. Dulay</div>
+                    </div>
+                </div>
+            </section>
+
+            <footer class='minimal-footer bg-soft'>
+                <div class='footer-flex'>
+                    <div class='f-brand'>
+                        <h2>Omrie</h2>
+                        <p>Elevating the art of living.</p>
+                    </div>
+                    <div class='f-links'>
+                        <div class='link-column'>
+                            <h4>Company</h4>
+                            <a href='#manifesto'>About Us</a>
+                            <a href='#visionary'>The Visionary</a>
+                        </div>
+                        <div class='link-column'>
+                            <h4>Services</h4>
+                            <a href='#concierge'>Concierge</a>
+                            <a href='#collection'>Private Selling</a>
+                        </div>
+                    </div>
+                </div>
+                <div class='footer-bottom'>
+                    <p>&copy; 2026 Omrie Estate. Designed for perfection.</p>
+                    <div class='f-contact'>
+                        <span>inquiries@omrieestate.com</span>
+                    </div>
+                </div>
+            </footer>
+        </main>
+    </div>
+
+    <div class='custom-modal' id='property-modal'>
+        <div class='modal-inner'>
+            <button class='btn-close close-prop-modal magnetic'><i class='bx bx-x'></i></button>
+            <div class='modal-visual' id='modal-img'>
+                <div class='status-badge'>Available</div>
+            </div>
+            <div class='modal-data'>
+                <div class='modal-actions-top'>
+                    <span class='cat-tag' id='modal-cat'></span>
+                    <div class='modal-tools'>
+                        <button class='tool-btn magnetic' id='btn-fav'><i class='bx bx-heart'></i></button>
+                        <button class='tool-btn magnetic' id='btn-share'><i class='bx bx-share-alt'></i></button>
+                        <button class='tool-btn magnetic' id='btn-print'><i class='bx bx-printer'></i></button>
+                    </div>
+                </div>
+                
+                <h2 id='modal-name'></h2>
+                <p class='modal-price' id='modal-cost'></p>
+                
+                <div class='modal-metrics'>
+                    <span id='modal-beds'></span>
+                    <span class='divider'></span>
+                    <span id='modal-baths'></span>
+                    <span class='divider'></span>
+                    <span id='modal-sqft'></span>
+                </div>
+
+                <div class='modal-tabs'>
+                    <button class='tab-btn active' data-tab='overview'>Overview</button>
+                    <button class='tab-btn' data-tab='calculator'>Investment Calc</button>
+                    <button class='tab-btn' data-tab='specs'>Specs</button>
+                </div>
+
+                <div class='tab-content active' id='tab-overview'>
+                    <p class='modal-description' id='modal-desc'></p>
+                    <ul class='amenity-list' id='modal-amenities'></ul>
+                </div>
+
+                <div class='tab-content' id='tab-calculator'>
+                    <div class='calc-wrapper'>
+                        <div class='calc-group'>
+                            <label>Downpayment (%)</label>
+                            <input type='range' id='dp-slider' min='10' max='50' value='20'>
+                            <span id='dp-value'>20%</span>
+                        </div>
+                        <div class='calc-group'>
+                            <label>Loan Term (Years)</label>
+                            <input type='range' id='term-slider' min='5' max='30' value='15'>
+                            <span id='term-value'>15 Years</span>
+                        </div>
+                        <div class='calc-result'>
+                            <span>Est. Monthly Amortization</span>
+                            <strong id='monthly-amort'>$0</strong>
+                            <p class='calc-note'>*Based on a fixed 7% interest rate.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class='tab-content' id='tab-specs'>
+                    <div class='spec-grid'>
+                        <div class='spec-box'><span>Year Built</span><strong id='spec-year'></strong></div>
+                        <div class='spec-box'><span>Property Tax</span><strong id='spec-tax'></strong></div>
+                        <div class='spec-box'><span>Zoning</span><strong>Residential</strong></div>
+                        <div class='spec-box'><span>Turnover</span><strong>Fully Fitted</strong></div>
+                    </div>
+                </div>
+                
+                <div class='modal-actions' style='display:flex; gap:10px; margin-top: 30px;'>
+                    <button class='btn-pill btn-pink full-w trigger-inquiry magnetic'>Private Viewing</button>
+                    <button class='btn-pill btn-outline full-w trigger-tour magnetic'>Virtual Tour</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class='custom-modal' id='tour-modal'>
+        <div class='modal-inner tour-inner'>
+            <button class='btn-close close-tour-modal magnetic'><i class='bx bx-x'></i></button>
+            <div class='tour-content' style='background-image: url(&apos;https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80&apos;);'>
+                <div class='tour-overlay'>
+                    <i class='bx bx-play-circle play-icon'></i>
+                    <h2>Immersive 360° Experience</h2>
+                    <p>Explore the property interactively.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class='custom-modal' id='inquiry-modal'>
+        <div class='modal-inner inquiry-inner'>
+            <button class='btn-close close-inq-modal magnetic'><i class='bx bx-x'></i></button>
+            <div class='inquiry-visual' style='background-image: url(&apos;https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?auto=format&fit=crop&w=800&q=80&apos;);'></div>
+            <div class='inquiry-form-container'>
+                <span class='overline'>Omrie Concierge</span>
+                <h2>Private Inquiry</h2>
+                <p class='form-sub'>Provide your details below and a dedicated Omrie representative will contact you to curate your experience.</p>
+                
+                <form id='contact-form'>
+                    <div class='form-group'>
+                        <input type='text' placeholder='Full Name' required>
+                    </div>
+                    <div class='form-row'>
+                        <div class='form-group'>
+                            <input type='email' placeholder='Email Address' required>
+                        </div>
+                        <div class='form-group'>
+                            <input type='tel' placeholder='Phone Number' required>
+                        </div>
+                    </div>
+                    <div class='form-row'>
+                        <div class='form-group'>
+                            <select required>
+                                <option value=''>Select Inquiry Type...</option>
+                                <option value='viewing'>Schedule a Property Viewing</option>
+                                <option value='selling'>List a Property</option>
+                                <option value='concierge'>Concierge Services</option>
+                            </select>
+                        </div>
+                        <div class='form-group'>
+                            <input type='datetime-local' required style='color: var(--text-muted);'>
+                        </div>
+                    </div>
+                    <div class='form-group'>
+                        <textarea rows='4' placeholder='How may we assist you?' required></textarea>
+                    </div>
+                    <button type='submit' class='btn-pill btn-pink full-w magnetic'>Submit Inquiry</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <button class='vip-chat-toggle magnetic' id='chat-toggle'><i class='bx bx-message-square-dots'></i></button>
+    <div class='vip-chat-box' id='chat-box'>
+        <div class='chat-header'>
+            <div>
+                <h4>Omrie VIP Concierge</h4>
+                <p>Typically replies in minutes</p>
+            </div>
+            <button id='close-chat'><i class='bx bx-x'></i></button>
+        </div>
+        <div class='chat-body'>
+            <div class='chat-message bot'>
+                Welcome to Omrie Estate. How may we assist with your curation today?
+            </div>
+        </div>
+        <div class='chat-footer'>
+            <input type='text' placeholder='Type your message...'>
+            <button><i class='bx bx-send'></i></button>
+        </div>
+    </div>
+
+    <script src='https://unpkg.com/leaflet@1.9.4/dist/leaflet.js'></script>
+    <script src='script.js'></script>
+</body>
+</html>
